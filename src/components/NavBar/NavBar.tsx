@@ -5,19 +5,22 @@ import { useState } from 'react';
  */
 import { useMediaQuery } from '@mui/material';
 
+import logo from '../../assets/products/logo.png';
+
 /**
  * Imports styles components
  */
 import {
   Container,
   ContainerParagraph,
-  Paragraph,
+  CustomLogo,
   ContainerLinks,
   MobileMenu,
   CustomNavLink,
   MobileNavLink,
   ContainerWrapper,
 } from './NavBar.styles';
+import { Link } from 'react-router-dom';
 
 /**
  * Displays the component
@@ -59,6 +62,15 @@ export const NavBar: React.FC = () => {
         >
           Produse
         </CustomNavLink>
+        <CustomNavLink exact to="/events" activeStyle={{ color: '#ffff' }}>
+          Evenimente
+        </CustomNavLink>
+        <CustomNavLink exact to="/information" activeStyle={{ color: '#ffff' }}>
+          Information
+        </CustomNavLink>
+        <CustomNavLink exact to="/contact" activeStyle={{ color: '#ffff' }}>
+          Contact
+        </CustomNavLink>
       </ContainerLinks>
       <MobileMenu isOpen={isMobileMenuOpen} to={''}>
         <MobileNavLink
@@ -85,6 +97,30 @@ export const NavBar: React.FC = () => {
         >
           Despre Produse
         </MobileNavLink>
+        <MobileNavLink
+          exact
+          to="/events"
+          activeStyle={{ color: '#ffff' }}
+          onClick={toggleMobileMenu}
+        >
+          Information
+        </MobileNavLink>
+        <MobileNavLink
+          exact
+          to="/information"
+          activeStyle={{ color: '#ffff' }}
+          onClick={toggleMobileMenu}
+        >
+          Information
+        </MobileNavLink>
+        <MobileNavLink
+          exact
+          to="/contact"
+          activeStyle={{ color: '#ffff' }}
+          onClick={toggleMobileMenu}
+        >
+          Information
+        </MobileNavLink>
       </MobileMenu>
     </>
   );
@@ -93,10 +129,9 @@ export const NavBar: React.FC = () => {
     <Container>
       <ContainerWrapper>
         <ContainerParagraph>
-          <Paragraph>
-            Iulian Gradinaru <br />
-            Front End Developer
-          </Paragraph>
+          <Link style={{ textDecoration: 'none' }} to="/">
+            <CustomLogo className="logo" src={logo} alt="" />
+          </Link>
         </ContainerParagraph>
         {!isMobileView && navbarContent}
       </ContainerWrapper>

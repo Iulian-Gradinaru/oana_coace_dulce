@@ -8,7 +8,7 @@ import { styled } from '@mui/system';
 /**
  * Imports type
  */
-import { CustomNavLinkProps } from './NavBar.types';
+import { CustomNavLinkProps } from '../NavBar/NavBar.types';
 
 /**
  * Styles the Container
@@ -180,5 +180,16 @@ export const CustomLogo = styled('img')(() => {
     borderRadius: '38%',
     marginLeft: 30,
     marginTop: 4,
+  };
+});
+
+/**
+ * Stiled the IconLink
+ */
+export const IconLink = styled('a')(() => {
+  return {
+    marginLeft: 20,
+    marginRight: 20,
+    color: 'black',
   };
 });
