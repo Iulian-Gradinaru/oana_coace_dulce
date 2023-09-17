@@ -1,15 +1,8 @@
 import { useState } from 'react';
-
-/**
- * Imports Material UI components
- */
 import { useMediaQuery } from '@mui/material';
+import { Menu } from '@mui/icons-material'; // Importăm iconița de burger
 
 import logo from '../../assets/products/logo.png';
-
-/**
- * Imports styles components
- */
 import {
   Container,
   ContainerParagraph,
@@ -19,120 +12,178 @@ import {
   CustomNavLink,
   MobileNavLink,
   ContainerWrapper,
+  MobileMenuButton, // Adăugăm noua componentă de buton pentru meniul mobil
 } from './NavBar.styles';
 import { Link } from 'react-router-dom';
 
-/**
- * Displays the component
- */
 export const NavBar: React.FC = () => {
-  /**
-   * Initializes mobile menu
-   */
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  /**
-   * Handles the mobile view
-   */
+  // Definește un starea pentru meniul "Produse"
+  const [showProductsMenu, setShowProductsMenu] = useState(false);
   const isMobileView = useMediaQuery('(max-width: 600px)');
 
-  /**
-   * Handles the mobile menu state
-   */
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  /**
-   * Handles the Nav content
-   */
+  // Funcție pentru a deschide sau închide meniul "Produse"
+  const toggleProductsMenu = () => {
+    setShowProductsMenu(!showProductsMenu);
+  };
+
   const navbarContent = (
     <>
-      <ContainerLinks>
-        <CustomNavLink exact={true} to="/" activeStyle={{ color: '#ffff' }}>
-          Acasa
-        </CustomNavLink>
-        <CustomNavLink exact to="/about" activeStyle={{ color: '#ffff' }}>
-          Despre Noi
-        </CustomNavLink>
-        <CustomNavLink
-          exact
-          to="/bakery-products"
-          activeStyle={{ color: '#ffff' }}
-        >
-          Produse
-        </CustomNavLink>
-        <CustomNavLink exact to="/events" activeStyle={{ color: '#ffff' }}>
-          Evenimente
-        </CustomNavLink>
-        <CustomNavLink exact to="/information" activeStyle={{ color: '#ffff' }}>
-          Information
-        </CustomNavLink>
-        <CustomNavLink exact to="/contact" activeStyle={{ color: '#ffff' }}>
-          Contact
-        </CustomNavLink>
-      </ContainerLinks>
-      <MobileMenu isOpen={isMobileMenuOpen} to={''}>
-        <MobileNavLink
-          exact={true}
-          to="/"
-          activeStyle={{ color: '#ffff' }}
-          onClick={toggleMobileMenu}
-        >
-          Acasa
-        </MobileNavLink>
-        <MobileNavLink
-          exact
-          to="/about"
-          activeStyle={{ color: '#ffff' }}
-          onClick={toggleMobileMenu}
-        >
-          Despre Noi
-        </MobileNavLink>
-        <MobileNavLink
-          exact
-          to="/bakery-products"
-          activeStyle={{ color: '#ffff' }}
-          onClick={toggleMobileMenu}
-        >
-          Despre Produse
-        </MobileNavLink>
-        <MobileNavLink
-          exact
-          to="/events"
-          activeStyle={{ color: '#ffff' }}
-          onClick={toggleMobileMenu}
-        >
-          Information
-        </MobileNavLink>
-        <MobileNavLink
-          exact
-          to="/information"
-          activeStyle={{ color: '#ffff' }}
-          onClick={toggleMobileMenu}
-        >
-          Information
-        </MobileNavLink>
-        <MobileNavLink
-          exact
-          to="/contact"
-          activeStyle={{ color: '#ffff' }}
-          onClick={toggleMobileMenu}
-        >
-          Information
-        </MobileNavLink>
-      </MobileMenu>
+      {!isMobileView && (
+        <ContainerLinks className="container-links">
+          <CustomNavLink
+            className={'custom-nav-link-acasa'}
+            exact={true}
+            to="/"
+            activeStyle={{ color: '#ffff' }}
+          >
+            Acasa
+          </CustomNavLink>
+          <CustomNavLink
+            className={'custom-nav-link-despre-noi'}
+            exact
+            to="/about"
+            activeStyle={{ color: '#ffff' }}
+          >
+            Despre Noi
+          </CustomNavLink>
+          {/* <CustomNavLink
+            className={'custom-nav-link-produse'}
+            exact
+            to="/products"
+            activeStyle={{ color: '#ffff' }}
+          >
+            Produse
+          </CustomNavLink> */}
+          <div>
+            <CustomNavLink
+              className={'custom-nav-link-produse'}
+              onClick={toggleProductsMenu}
+              to={''}
+            >
+              Produse
+            </CustomNavLink>
+            {showProductsMenu && (
+              <div className="products-submenu">
+                <CustomNavLink to="/torturi">Torturi</CustomNavLink>
+                <CustomNavLink to="/produse-patiserie">
+                  Produse Patiserie
+                </CustomNavLink>
+              </div>
+            )}
+          </div>
+
+          <ContainerParagraph className="container-paragraph">
+            <Link className="link" style={{ textDecoration: 'none' }} to="/">
+              <CustomLogo className="logo" src={logo} alt="" />
+            </Link>
+          </ContainerParagraph>
+          <CustomNavLink
+            className={'custom-nav-link-blog'}
+            exact
+            to="/blog"
+            activeStyle={{ color: '#ffff' }}
+          >
+            Blog
+          </CustomNavLink>
+          <CustomNavLink
+            className={'custom-nav-link-informatii'}
+            exact
+            to="/information"
+            activeStyle={{ color: '#ffff' }}
+          >
+            Information
+          </CustomNavLink>
+          <CustomNavLink
+            className={'custom-nav-link-contact'}
+            exact
+            to="/contact"
+            activeStyle={{ color: '#ffff' }}
+          >
+            Contact
+          </CustomNavLink>
+        </ContainerLinks>
+      )}
+      {isMobileView && (
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
+          <MobileMenuButton onClick={toggleMobileMenu}>
+            <Menu /> {/* Icoană de hamburger */}
+          </MobileMenuButton>
+          <ContainerParagraph className="container-paragraph">
+            <Link className="link" style={{ textDecoration: 'none' }} to="/">
+              <CustomLogo className="logo" src={logo} alt="" />
+            </Link>
+          </ContainerParagraph>
+        </div>
+      )}
+      {isMobileMenuOpen && (
+        <MobileMenu className={'mobile-menu'} isOpen={isMobileMenuOpen} to={''}>
+          <MobileNavLink
+            className={'mobile-menu-acasa'}
+            exact={true}
+            to="/"
+            activeStyle={{ color: '#ffff' }}
+            onClick={toggleMobileMenu}
+          >
+            Acasa
+          </MobileNavLink>
+          <MobileNavLink
+            className={'mobile-menu-despre-noi'}
+            exact
+            to="/about"
+            activeStyle={{ color: '#ffff' }}
+            onClick={toggleMobileMenu}
+          >
+            Despre Noi
+          </MobileNavLink>
+          <MobileNavLink
+            className={'mobile-menu-produse'}
+            exact
+            to="/products"
+            activeStyle={{ color: '#ffff' }}
+            onClick={toggleMobileMenu}
+          >
+            Produse
+          </MobileNavLink>
+          <MobileNavLink
+            className={'mobile-menu-events'}
+            exact
+            to="/blog"
+            activeStyle={{ color: '#ffff' }}
+            onClick={toggleMobileMenu}
+          >
+            Blog
+          </MobileNavLink>
+          <MobileNavLink
+            className={'mobile-menu-information'}
+            exact
+            to="/information"
+            activeStyle={{ color: '#ffff' }}
+            onClick={toggleMobileMenu}
+          >
+            Information
+          </MobileNavLink>
+          <MobileNavLink
+            className={'mobile-menu-contact'}
+            exact
+            to="/contact"
+            activeStyle={{ color: '#ffff' }}
+            onClick={toggleMobileMenu}
+          >
+            Contact
+          </MobileNavLink>
+        </MobileMenu>
+      )}
     </>
   );
 
   return (
-    <Container>
-      <ContainerWrapper>
-        <ContainerParagraph>
-          <Link style={{ textDecoration: 'none' }} to="/">
-            <CustomLogo className="logo" src={logo} alt="" />
-          </Link>
-        </ContainerParagraph>
+    <Container className="container">
+      <ContainerWrapper className="container wrapper">
         {!isMobileView && navbarContent}
       </ContainerWrapper>
       {isMobileView && navbarContent}

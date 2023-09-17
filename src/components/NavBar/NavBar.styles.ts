@@ -16,14 +16,14 @@ import { CustomNavLinkProps } from './NavBar.types';
 export const Container = styled('nav')(({ theme }) => {
   return {
     backgroundColor: '#fabe5a',
-    height: '8vh',
+    height: '12vh',
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     alignItems: 'center',
     padding: '0 20px',
     fontSize: 23,
     color: '#000000',
-    margin: '-8px',
+    // margin: '-8px',
     [theme.breakpoints.down('sm')]: {
       display: 'flex',
       alignItems: 'center',
@@ -40,11 +40,11 @@ export const Container = styled('nav')(({ theme }) => {
  */
 export const ContainerWrapper = styled('div')(() => {
   return {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    flexGrow: 1,
-    marginRight: '20px',
+    // display: 'flex',
+    // justifyContent: 'space-between',
+    // alignItems: 'center',
+    // flexGrow: 1,
+    // marginRight: '20px',
   };
 });
 
@@ -54,12 +54,12 @@ export const ContainerWrapper = styled('div')(() => {
 export const ContainerParagraph = styled('div')(() => {
   return {
     display: 'flex',
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     alignItems: 'center',
-    flexGrow: 1,
+    // flexGrow: 1,
     cursor: 'pointer',
     margin: 0,
-    padding: 10,
+    // padding: 10,
   };
 });
 
@@ -88,7 +88,7 @@ export const ContainerLinks = styled('div')(() => {
   return {
     paddingRight: 36,
     display: 'flex',
-    gap: 20,
+    gap: 10,
   };
 });
 
@@ -104,9 +104,10 @@ export const CustomNavLink = styled(NavLink, {
     display: 'inline-block',
     verticalAlign: 'top',
     textAlign: 'center',
-    fontSize: 30,
+    fontSize: 26,
     position: 'relative',
     color: '#000000',
+    marginTop: 30,
     '&::after': {
       width: '0%',
       height: 4,
@@ -175,10 +176,24 @@ export const MobileNavLink = styled(NavLink)(({ theme }) => {
 
 export const CustomLogo = styled('img')(() => {
   return {
-    width: 50,
-    height: 50,
+    width: 85,
+    height: 70,
     borderRadius: '38%',
     marginLeft: 30,
-    marginTop: 4,
+    marginTop: 13,
+  };
+});
+
+export const MobileMenuButton = styled('div')(({ theme }) => {
+  return {
+    display: 'none', // Va fi afișat doar în modul mobil
+    alignItems: 'center',
+    justifyContent: 'center',
+    cursor: 'pointer',
+    fontSize: '24px',
+    color: '#000000',
+    [theme.breakpoints.down('sm')]: {
+      display: 'flex',
+    },
   };
 });
