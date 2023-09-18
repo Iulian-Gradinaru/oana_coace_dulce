@@ -197,3 +197,30 @@ export const MobileMenuButton = styled('div')(({ theme }) => {
     },
   };
 });
+
+// export const ProductMenuItem = styled(CustomNavLink)(() => {
+//   return {
+//     width: '100%', // Umple lățimea meniului
+//     padding: '10px', // Spatiu de padding pentru fiecare element
+//     textAlign: 'center', // Aliniere la centru
+//     color: 'blue',
+//   };
+// });
+
+// export const ProductsMenu = styled('div', {
+//   shouldForwardProp: (propName) => propName !== 'isOpen',
+// })<CustomNavLinkProps>(({ show }) => {
+//   return {
+//     visibility: show ? 'hidden' : 'visible', // Schimbarea aici
+//     flexDirection: 'column',
+//     gap: 10,
+//     position: 'absolute',
+//     backgroundColor: 'red',
+//     border: '1px solid #ccc',
+//     boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+//     zIndex: 1000,
+//     top: '11%',
+//     left: 326,
+//     width: 134,
+//   };
+// });

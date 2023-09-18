@@ -12,7 +12,9 @@ import {
   CustomNavLink,
   MobileNavLink,
   ContainerWrapper,
-  MobileMenuButton, // Adăugăm noua componentă de buton pentru meniul mobil
+  MobileMenuButton,
+  // ProductsMenu,
+  // ProductMenuItem, // Adăugăm noua componentă de buton pentru meniul mobil
 } from './NavBar.styles';
 import { Link } from 'react-router-dom';
 
@@ -51,31 +53,22 @@ export const NavBar: React.FC = () => {
           >
             Despre Noi
           </CustomNavLink>
-          {/* <CustomNavLink
+
+          <CustomNavLink
             className={'custom-nav-link-produse'}
-            exact
+            onClick={() => toggleProductsMenu()} // Setează showProductsMenu la true la clic
             to="/products"
-            activeStyle={{ color: '#ffff' }}
           >
             Produse
-          </CustomNavLink> */}
-          <div>
-            <CustomNavLink
-              className={'custom-nav-link-produse'}
-              onClick={toggleProductsMenu}
-              to={''}
-            >
-              Produse
-            </CustomNavLink>
-            {showProductsMenu && (
-              <div className="products-submenu">
-                <CustomNavLink to="/torturi">Torturi</CustomNavLink>
-                <CustomNavLink to="/produse-patiserie">
+          </CustomNavLink>
+          {/* {showProductsMenu && (
+              <ProductsMenu to={''}>
+                <ProductMenuItem to="/cake">Torturi</ProductMenuItem>
+                <ProductMenuItem to="/bakery-product">
                   Produse Patiserie
-                </CustomNavLink>
-              </div>
-            )}
-          </div>
+                </ProductMenuItem>
+              </ProductsMenu>
+            )} */}
 
           <ContainerParagraph className="container-paragraph">
             <Link className="link" style={{ textDecoration: 'none' }} to="/">
