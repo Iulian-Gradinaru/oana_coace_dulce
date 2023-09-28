@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useMediaQuery } from '@mui/material';
 import { Menu } from '@mui/icons-material'; // Importăm iconița de burger
 
-import logo from '../../assets/products/logo.png';
+import logo from '../../assets/products/logo.jpg';
 import {
   Container,
   ContainerParagraph,
@@ -13,6 +13,7 @@ import {
   MobileNavLink,
   ContainerWrapper,
   MobileMenuButton,
+  MenuIcon,
   // ProductsMenu,
   // ProductMenuItem, // Adăugăm noua componentă de buton pentru meniul mobil
 } from './NavBar.styles';
@@ -102,9 +103,16 @@ export const NavBar: React.FC = () => {
         </ContainerLinks>
       )}
       {isMobileView && (
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            gap: '40px',
+            width: '50%',
+          }}
+        >
           <MobileMenuButton onClick={toggleMobileMenu}>
-            <Menu /> {/* Icoană de hamburger */}
+            <MenuIcon /> {/* Icoană de hamburger */}
           </MobileMenuButton>
           <ContainerParagraph className="container-paragraph">
             <Link className="link" style={{ textDecoration: 'none' }} to="/">

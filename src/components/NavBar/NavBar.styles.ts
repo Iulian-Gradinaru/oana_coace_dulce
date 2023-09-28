@@ -10,12 +10,14 @@ import { styled } from '@mui/system';
  */
 import { CustomNavLinkProps } from './NavBar.types';
 
+import { Menu } from '@mui/icons-material';
+
 /**
  * Styles the Container
  */
 export const Container = styled('nav')(({ theme }) => {
   return {
-    backgroundColor: '#fabe5a',
+    backgroundColor: '#e83e8c7a',
     height: '12vh',
     display: 'flex',
     justifyContent: 'center',
@@ -30,7 +32,7 @@ export const Container = styled('nav')(({ theme }) => {
       justifyContent: 'center',
       flexDirection: 'column',
       height: 'auto',
-      marginBottom: -10,
+      padding: 20,
     },
   };
 });
@@ -84,11 +86,14 @@ export const Paragraph = styled('p')(({ theme }) => {
 /**
  * Styles the Container Links
  */
-export const ContainerLinks = styled('div')(() => {
+export const ContainerLinks = styled('div')(({ theme }) => {
   return {
     paddingRight: 36,
     display: 'flex',
-    gap: 10,
+    gap: 44,
+    [theme.breakpoints.down('md')]: {
+      gap: 7,
+    },
   };
 });
 
@@ -179,8 +184,9 @@ export const CustomLogo = styled('img')(() => {
     width: 85,
     height: 70,
     borderRadius: '38%',
-    marginLeft: 30,
-    marginTop: 13,
+    // marginLeft: 30,
+    marginTop: 17,
+    marginBottom: 13,
   };
 });
 
@@ -198,29 +204,12 @@ export const MobileMenuButton = styled('div')(({ theme }) => {
   };
 });
 
-// export const ProductMenuItem = styled(CustomNavLink)(() => {
-//   return {
-//     width: '100%', // Umple lățimea meniului
-//     padding: '10px', // Spatiu de padding pentru fiecare element
-//     textAlign: 'center', // Aliniere la centru
-//     color: 'blue',
-//   };
-// });
-
-// export const ProductsMenu = styled('div', {
-//   shouldForwardProp: (propName) => propName !== 'isOpen',
-// })<CustomNavLinkProps>(({ show }) => {
-//   return {
-//     visibility: show ? 'hidden' : 'visible', // Schimbarea aici
-//     flexDirection: 'column',
-//     gap: 10,
-//     position: 'absolute',
-//     backgroundColor: 'red',
-//     border: '1px solid #ccc',
-//     boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-//     zIndex: 1000,
-//     top: '11%',
-//     left: 326,
-//     width: 134,
-//   };
-// });
+export const MenuIcon = styled(Menu)(({ theme }) => {
+  return {
+    color: '#000000',
+    [theme.breakpoints.down('sm')]: {
+      width: '200%',
+      height: '100%',
+    },
+  };
+});

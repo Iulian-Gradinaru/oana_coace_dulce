@@ -7,29 +7,32 @@ import { Products } from './components/Products';
 import { Information } from './components/Information';
 import { Contact } from './components/Contact';
 import { Blog } from './components/Blog';
-import { Cake } from './Pages/Cake/Cake';
-import { BakeryProducts } from './Pages/BakeryProducts';
+
 import './App.css';
 import { Post } from './components/Post/Post';
+import { ProductDescriptions } from './components/ProductDescriptions';
+import { Footer } from './components/Footer';
+import { ScrollToTop } from './components/ScrollToTop';
 
 export const App = () => {
   return (
     <div className="App">
       <Router>
         <NavBar />
-
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/products" component={Products} />
-          <Route exact path="/blog" component={Blog} />
-          <Route exact path="/information" component={Information} />
-          <Route exact path="/contact" component={Contact} />
-          <Route exact path="/cake" component={Cake} />
-          <Route exact path="/bakery-product" component={BakeryProducts} />
-          <Route path="/post/:postId" component={Post} />
-          <Route path="*" component={Home} />
-        </Switch>
+        <ScrollToTop>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/products" component={Products} />
+            <Route exact path="/blog" component={Blog} />
+            <Route exact path="/information" component={Information} />
+            <Route exact path="/contact" component={Contact} />
+            <Route path="/product/:productId" component={ProductDescriptions} />
+            <Route path="/post/:postId" component={Post} />
+            <Route path="*" component={Home} />
+          </Switch>
+        </ScrollToTop>
+        <Footer />
       </Router>
     </div>
   );
