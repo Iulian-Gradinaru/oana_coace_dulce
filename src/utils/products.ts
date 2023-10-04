@@ -1,4 +1,4 @@
-import product1 from '../assets/products/Tort_inzmeurat.jpeg';
+import product1 from '../assets/products/Tort_inzmeurat.jpg';
 import product2 from '../assets/products/Tort_tiramisu.jpg';
 import product3 from '../assets/products/Tort_Medovik.jpeg';
 import product4 from '../assets/products/Tort_Ecler.jpeg';
@@ -7,7 +7,7 @@ import product6 from '../assets/products/Tort-RedVelvet.jpeg';
 import product7 from '../assets/products/Tort_Oreo.jpg';
 import product8 from '../assets/products/Tort_ciocolata.jpeg';
 import product9 from '../assets/products/poza2.jpg';
-import product10 from '../assets/products/poza3.jpg';
+import product10 from '../assets/products/Tort_capsuni.jpg';
 import product11 from '../assets/products/poza5.jpg';
 import product12 from '../assets/products/poza6.jpg';
 import product13 from '../assets/products/poza7.jpg';
@@ -20,30 +20,34 @@ import product18 from '../assets/products/poza6.jpg';
 export interface ProductData {
   id: number;
   productName: string;
-  type?: string;
-  price?: number;
+
   productImage?: string;
   descriptions: string;
-  discount?: number;
+
+  cakeBase?: string;
+  cream?: string;
+  decoration?: string;
 }
 
 export const PRODUCTS: ProductData[] = [
   {
     id: 1,
-    productName: 'Tort Inzmeurat/Incapsunat',
-    // type: 'Apa De Parfum ',
-    // price: 99.99,
-    // discount: 119.99,
+    productName: 'Tort Inzmeurat',
+    cakeBase: 'Făină albă de grâu, Cacao, Ou, Zahăr, Zahăr Vanilinat.',
+    cream:
+      'Lapte, Gălbenuș, Zahăr, Păstaie de vanilie, Amidon din Porumb, Mascarpone, Unt.',
+    decoration: 'Zmeură proaspătă, Afine',
     productImage: product1,
     descriptions:
-      "Burberry Goddess Eau de Parfum is a delightful choice for lovers of gourmand and aromatic scents. This unique scent is driven by a powerful trio of vanillas, which add a sweet and sensual note. At the top, you'll feel an infusion of vanilla with woody undertones that add a warm and refined note. At the heart of the fragrance is a richly sweet vanilla caviar that adds a more intense aroma and tint. At the base, we find a vanilla absolute enriched with bright lavender for an intriguing and balanced combination. Burberry Goddess Eau de Parfum will captivate you with its captivating and refined vanilla aroma, giving you a special and authentic fragrance experience.",
+      'Combină gustul aromat al cremei de vanilie făcută din gălbenuș de ou, lapte și păstaie de vanilie cu cel acrișor al zmeurei. Blatul se face la alegere: blat de vanilie sau de cacao.',
   },
+
   {
     id: 2,
     productName: 'Tort Tiramisu',
-    type: 'My Euphoria',
-    price: 89.99,
-    discount: 109.99,
+    cakeBase: '',
+    cream: '',
+    decoration: '',
     productImage: product2,
     descriptions:
       "My Euphoria is an eau de parfum that exudes femininity. Euphoria is a seductive and irresistible women's fragrance that brings the promise of unforgettable memories, awakens your zest for life and inspires you to gain new experiences.Calvin Klein fragrance is inspired by the simple yet elegant orchid. The scent opens with seductive persimmon fruit and pomegranate. The eau de parfum then unfolds in the heart in intense tones of lotus blossom and orchid, with a base of liquid amber and luxurious mahogany.",
@@ -51,76 +55,91 @@ export const PRODUCTS: ProductData[] = [
   {
     id: 3,
     productName: 'Tort Medovik',
-    type: 'BAD BOY',
-    price: 69.99,
-    discount: 99.99,
+    cakeBase: 'Miere de albine, Unt, Ou, Zahăr.',
+    cream: 'Smântână, Frișcă, Zahăr pudră, Zmeură',
+    decoration: 'Firmituri obținute din blat',
     productImage: product3,
-
     descriptions:
-      'Bold, mysterious, seductive and free. The new eau de parfum from Carolina Herrera is aimed at men who are not afraid to take risks. Bad Boy is confident and embodies all the contrasting sides of his masculine personality, a man who is brave yet vulnerable, strong yet sensitive. With seductive notes of grapefruit contrasted with notes of musk, sage and leather, Bad Boy is sophisticated and complex. Dare to create your own rules and attract attention like a lightning storm wherever you go!',
+      'Când spunem Medovik, spunem multe-multe foi și cremă acrișoară de smântână în care punem zmeură. O alegere bună pentru zilele călduroase de vară, dar nu numai.',
   },
   {
     id: 4,
     productName: 'Tort Ecler',
-    type: "Chloe L'eau de Parfum Lumineuse",
-    price: 59.99,
-    discount: 89.99,
+    cakeBase: 'lapte, Apă, Unt, Făină, Ou.',
+    cream:
+      'Lapte, Gălbenuș, Zahăr, Păstaie de vanilie, Unt, Amidon din porumb, Pastă de alune de pădure 100%, Fără zahăr adăugat.',
+    decoration: 'Fructe proaspete de sezon și Migdale coapte',
     productImage: product4,
-
     descriptions:
-      'The chords proposed by Chloé Eau de Parfum offer apparent contrasts that finally intertwine in a poetry of aromas, in a composition that enchants with elegance and boldness. The very versatile scent is intended for everyday use, being more than suitable and becoming your signature fragrance. With a light and fresh, yet rewarding and captivating fragrance Chloé, launched in 2008, departs from its timid predecessor. Following the bold, free-spirited designer line, this fragrance is feminine, but in an untraditional way.',
+      'Acest tort este turnat în formă rotundă însă rețetă coajei de ecler se respectă în totalitate',
   },
   {
     id: 5,
-    productName: 'Tort Pavlova',
-    type: "J'adore",
-    price: 109.99,
-    discount: 119.99,
+    productName: 'Tort Coffe Pavlova',
+    cakeBase:
+      'Albuș de ou, Zahar, Un praf de sare, Suc de lămâie, Amidon din porumb',
+    cream:
+      'Lapte, Gălbenuș, Zahăr, Păstaie de vanilie, Unt, Amidon din porumb, Cafea solubilă. ',
+    decoration: 'Afine proaspete ',
     productImage: product5,
-
     descriptions:
-      "A living legend of the perfume world, J'Adore is a symbol of classic femininity and absolute beauty over which time has no say. Deeply floral, elegant and sophisticated, J'Adore eau de toilette has a luminous composition in which sensual citrus notes of mandarin and orange blossom, orchid, rose, amaranth, blackberry and musk are sensually blended. For those moments when you want to experience what it's like to be a true goddess.",
+      'Pavlova este acel tort care ne vorbește despre sensibilitate și fragilitate. Este tortul care are blat de bezea crocant la exterior și moale la interior. ',
   },
   {
     id: 6,
     productName: 'Tort Red Velvet',
-    type: 'Si Refillable Eau De Parfum Intense',
-    price: 89.99,
-    discount: 109.99,
+    cakeBase:
+      'Făină albă de grâu, Ou, Zahăr, Zahar vanilinat, Colorant pudră roșu.',
+    cream:
+      'Lapte, Gălbenuș, Zahăr, Păstaie de vanilie, Cremă de brânză, Zahăr pudră ',
+    decoration: 'Fructe proaspete de sezon',
     productImage: product6,
     descriptions:
-      'The new Sì Eau de Parfum Intense bottle is designed like a jewel, being for the first time refillable. Made with a unique savoir-faire of bottle making, the emblematic shape of the Si bottle is now embraced by the perfume logo in a striking, engraved gold. It makes a powerful statement in inviting every woman to say Yes.',
+      'Ca o catifea fină este acest tort, atât blatul cât și crema acestuia. ',
   },
   {
     id: 7,
     productName: 'Tort Oreo',
-    type: 'Aqua Allegoria Oud Yuzu Forte',
-    price: 119.99,
-    discount: 139.99,
+    cakeBase: 'Cacao: Făină albă de grâu, Ou, Cacao, Zahăr, Zahar vanilinat.',
+    cream:
+      'Lapte, Gălbenuș, Zahăr, Păstaie de vanilie, Unt, Amidon din porumb, Frișcă, Biscuiți Oreo sfărâmați ',
+    decoration: 'Mini-biscuiți Oreo',
     productImage: product7,
     descriptions:
-      'The Aqua Allegoria fragrance collection celebrates the wonders of the world. Each creation pays homage to the beauty of nature and leads us to the discovery of exceptional raw materials and notes, enhanced by our explorer perfumers. Discover Oud Yuzu Forte, the unexpected contrast between the sacred swirls of oud wood and the raucous tartness of yuzu. Wood and citrus meet to deliver a fragrance that juggles light and shade. "Oud Yuzu Forte is the surprising illumination of sacred and mysterious oud wood, laced with the spicy freshness of yuzu." - Delphine Jelk, perfumer Guerlain Aqua Allegoria Forte, the intense collection, is a warm and invaluable journey into the heart of the wonders of the world: Eaux de Parfum celebrating the intense beauty of nature, revealed by the golden rays of the setting sun. A powerful symbol of Guerlain \'s commitment to the planet, Aqua Allegoria Forte fragrances contain over 90% natural origin*. ',
+      'Este o replică mai mare a biscuiților Oreo, însă cu mai multe blaturi și cremă din plin. ',
   },
   {
     id: 8,
     productName: 'Tort de Ciocolata',
-    type: "TWILLY D'HERMES",
-    price: 99.99,
-    discount: 110.99,
+    cakeBase: 'Cacao: Făină albă de grâu, Ou, Zahăr, Zahăr vanilinat.',
+    cream:
+      'Picături de ciocolata neagră, Picături de ciocolată cu lapte, Frișcă.',
+    decoration: 'Bucăți de ciocolata Kit-Kat, Ferrero Rocher',
     productImage: product8,
     descriptions:
-      "Designed by Christine Nagel for the Hermès girls, Tutti Twilly d'Hermès eau de parfum is a tribute to their free spirit, their bold and relaxed attitude and their plurality. All different, they are all found in this fragrance. A floral and fruity eau de parfum with the generously blended character of sweet ginger blossom, soft lychee and enveloping musk. Designed by Florence Manlik, the iconic lantern bottle is square-shaped and decorated with a reverse shade of lychee red. The white cap is wrapped in a silk ribbon designed by Carine Brancowitz. Being hand-tied, each silk ribbon is unique. The name of the Twilly d'Hermès fragrance family evokes the House of Hermès' expertise in silk: twilly is a cheerful, multicoloured ribbon, a version of the House's square silk scarf.",
+      'Pentru iubitorii de ciocolată acest tort aduce în farfurie gustul delicios al ciocolatei Callebaut.',
   },
   {
     id: 9,
     productName: 'Tort Krantz',
-    type: 'Divine',
-    price: 87.99,
-    discount: 96.99,
+
     productImage: product9,
     descriptions:
       'The bottle of the new Divine perfume preserves Jean Paul Gaultier\'s creative heritage, inspired by the sensual bottle in the shape of a female torso, present in all editions of the "Classique" fragrance. This bottle is complemented by another iconic symbol of the designer: the conical corset, a piece of clothing created by Jean Paul Gaultier for Madonna\'s "Blond Ambition" world tour. Divine opens with notes of lily, marshmallow, marine notes and white flowers. These notes combine harmoniously to create a fragrance full of refinement and elegance. The lily notes add a delicate and sophisticated floral note, while the marshmallow adds a subtle sweetness. Marine notes bring a refreshing freshness, and white flower adds a touch of femininity and elegance.',
   },
+
+  {
+    id: 10,
+    productName: 'Tort încăpșunat',
+    cakeBase: 'Făină albă de grâu, Cacao, Ou, Zahăr, Zahăr Vanilinat.',
+    cream:
+      'Lapte, Gălbenuș, Zahăr, Păstaie de vanilie, Amidon din Porumb, Mascarpone, Unt.',
+    decoration: 'Căpșuni proaspete, Afine',
+    productImage: product10,
+    descriptions:
+      'Combină gustul aromat al cremei de vanilie făcută din gălbenuș de ou, lapte și păstaie de vanilie cu cel acrișor al zmeurei. Blatul se face la alegere: blat de vanilie sau de cacao.',
+  },
+
   // {
   //   id: 10,
   //   productName: 'Mugler',

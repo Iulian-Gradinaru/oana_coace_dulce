@@ -34,7 +34,7 @@ export const Products = () => {
               trei ciocolate , tort regal cu afine , tortul fara nume cu crema
               de vanilie ciocolata , frisca si visine
             </Typography>
-            <HeaderTypography variant="h5">Praituri</HeaderTypography>
+            <HeaderTypography variant="h5">Prajituri</HeaderTypography>
             <br />
             <Typography variant="h6" style={{ padding: '30px' }}>
               Specialitatile noastre: torturi invelite in martipan, iar modelul

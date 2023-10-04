@@ -59,7 +59,7 @@ export const CarouselContainer = styled('div')({
     right: '50px',
   },
   '.slick-dots li.slick-active button:before': {
-    color: '#0a3d62 !important',
+    color: '#f396c1 !important',
   },
   '.slick-dots li button:before': {
     color: 'black',

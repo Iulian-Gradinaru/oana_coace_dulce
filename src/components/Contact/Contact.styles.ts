@@ -11,8 +11,45 @@ export const PageContainer = styled('div')({
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
-  minHeight: '74vh',
+  // minHeight: '74vh',
 });
+
+/**
+ * Styles the Text Container
+ */
+export const TextContainer = styled('div')(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'flex-start',
+
+  [theme.breakpoints.down('md')]: {
+    width: '100%',
+  },
+  [theme.breakpoints.down('sm')]: {
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+}));
+
+/**
+ * Styles the Text
+ */
+export const TextInfo = styled('h5')(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'flex-start',
+  marginTop: 15,
+
+  [theme.breakpoints.down('md')]: {
+    width: '100%',
+  },
+  [theme.breakpoints.down('sm')]: {
+    width: '100%',
+    padding: 20,
+    marginBottom: 0,
+  },
+}));
 
 /**
  * Styles the ContactFormContainer
@@ -21,19 +58,19 @@ export const ContactFormContainer = styled('form')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  backgroundColor: '#F5EFE7;',
+  backgroundColor: '#f396c1',
   padding: '20px',
   borderRadius: '30px',
-  border: '1px solid #f1f1f1',
-  marginTop: 40,
+  // border: '1px solid #f1f1f1',
+  marginTop: 20,
   [theme.breakpoints.down('md')]: {
     width: '100%',
     padding: '40px',
-    marginLeft: -32,
+    // marginLeft: -32,
   },
   [theme.breakpoints.down('sm')]: {
-    marginRight: 7,
-    marginLeft: 16,
+    // marginRight: 7,
+    marginLeft: 47,
     width: '73%',
     padding: 26,
   },
@@ -45,8 +82,8 @@ export const ContactFormContainer = styled('form')(({ theme }) => ({
 export const Title = styled('h2')({
   fontSize: '28px',
   fontWeight: 'bold',
-  marginBottom: '20px',
-  color: 'dark',
+  marginBottom: '0px',
+  // color: 'dark',
 });
 
 /**
@@ -78,23 +115,29 @@ export const InputContainer = styled('div')(({ theme }) => ({
 /**
  * Styles the Input
  */
-export const Input = styled('input')({
+export const Input = styled('input')(({ theme }) => ({
   width: '100%',
   padding: '10px',
   margin: '10px 0',
-  borderRadius: '4px',
+  borderRadius: '10px',
   fontSize: '16px',
   backgroundColor: '#FFFFFF',
   border: 'none',
-});
+  [theme.breakpoints.down('md')]: {
+    width: '85%',
+  },
+  [theme.breakpoints.down('sm')]: {
+    width: '100%',
+  },
+}));
 
 /**
  * Styles the Textarea
  */
 export const Textarea = styled('textarea')(({ theme }) => ({
-  width: '97%',
+  width: '100%',
   padding: '10px',
-  borderRadius: '4px',
+  borderRadius: 10,
   fontSize: '16px',
   minHeight: '100px',
   resize: 'vertical',
@@ -102,14 +145,18 @@ export const Textarea = styled('textarea')(({ theme }) => ({
   border: 'none',
   [theme.breakpoints.down('md')]: {
     width: '100%',
-    minHeight: '170px',
+    minHeight: 170,
+    borderRadius: 10,
+  },
+  [theme.breakpoints.down('sm')]: {
+    borderRadius: 10,
   },
 }));
 
 /**
  * Styles the SubmitButton
  */
-export const SubmitButton = styled('button')({
+export const SubmitButton = styled('button')(({ theme }) => ({
   padding: '10px 20px',
   backgroundColor: '#4F709C',
   color: 'azure',
@@ -122,7 +169,11 @@ export const SubmitButton = styled('button')({
     backgroundColor: '#213555',
     color: '#FFFFFF',
   },
-});
+  [theme.breakpoints.down('md')]: {
+    marginTop: 20,
+  },
+  [theme.breakpoints.down('sm')]: {},
+}));
 
 /**
  * Styles the ContactInfoContainer
@@ -132,13 +183,15 @@ export const ContactInfoContainer = styled('div')(({ theme }) => ({
   flexDirection: 'column',
   alignItems: 'flex-start',
   marginTop: theme.spacing(2),
-  color: '#FFFFFF',
+  // color: '#FFFFFF',
+  marginBottom: 20,
   [theme.breakpoints.down('md')]: {
-    marginLeft: 20,
-    marginBottom: 10,
+    // marginLeft: 20,
+    marginBottom: 15,
   },
   [theme.breakpoints.down('sm')]: {
-    marginBottom: 35,
+    // marginBottom: 35,
+    alignItems: 'center',
   },
 }));
 
@@ -146,8 +199,8 @@ export const ContactInfoContainer = styled('div')(({ theme }) => ({
  * Styles the ContactInfo
  */
 export const ContactInfo = styled('div')({
-  color: '#FFFFFF',
-  '& p': {
+  color: 'black',
+  '& h5': {
     margin: '10px 0',
     fontSize: 20,
   },

@@ -17,7 +17,7 @@ import { Menu } from '@mui/icons-material';
  */
 export const Container = styled('nav')(({ theme }) => {
   return {
-    backgroundColor: '#e83e8c7a',
+    backgroundColor: '#f396c1',
     height: '12vh',
     display: 'flex',
     justifyContent: 'center',
@@ -26,6 +26,9 @@ export const Container = styled('nav')(({ theme }) => {
     fontSize: 23,
     color: '#000000',
     // margin: '-8px',
+    position: 'sticky', // Setăm poziția ca fiind "sticky"
+    top: 0, // Plasăm componenta în partea de sus a ecranului
+    zIndex: 100, // Asigură că componenta este afișată peste conținut
     [theme.breakpoints.down('sm')]: {
       display: 'flex',
       alignItems: 'center',

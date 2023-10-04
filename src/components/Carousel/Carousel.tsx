@@ -59,7 +59,6 @@ export const Carousel: React.FC = () => {
         {data.map((item) => (
           <div className="box" key={item.id}>
             <img src={item.image} alt="" />
-            <h2>{item.text}</h2>
           </div>
         ))}
       </Slider>

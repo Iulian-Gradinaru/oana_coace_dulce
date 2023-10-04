@@ -1,5 +1,5 @@
 import img1 from '../assets/products/poza5.jpg';
-import img2 from '../assets/products/poza4 .jpg';
+import img2 from '../assets/products/Tort_inzmeurat.jpg';
 import img3 from '../assets/products/poza1.jpg';
 
 export const data = [

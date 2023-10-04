@@ -15,8 +15,6 @@ import {
   CustomButton,
 } from './ProductDesriptions.styles';
 
-import { ProductType } from '../Item/Item.styles';
-
 export const ProductDescriptions: React.FC = () => {
   const { productId } = useParams<{ productId: string }>(); // Get product id from URL
   const product = PRODUCTS.find((p) => p.id === parseInt(productId, 10));
@@ -35,16 +33,17 @@ export const ProductDescriptions: React.FC = () => {
         <ContainerProduct className="containerProduct">
           <ProductName className="product-name">
             <Title>{product.productName}</Title>
-            <ProductType className="product-type">{product.type}</ProductType>
           </ProductName>
           <Paragraph>{product.descriptions}</Paragraph>
+          <Paragraph> Blat: {product.cakeBase}</Paragraph>
+          <Paragraph> Crema: {product.cream}</Paragraph>
+          <Paragraph> Decor: {product.decoration} </Paragraph>
         </ContainerProduct>
 
-        {/* <Link to={'/'}>
-          <CustomButton>Go to Shop</CustomButton>
-        </Link> */}
         <Link to={'/products'}>
-          <CustomButton>Inapoi la produse</CustomButton>
+          <CustomButton className="custom-button">
+            Inapoi la produse
+          </CustomButton>
         </Link>
       </Description>
     </div>

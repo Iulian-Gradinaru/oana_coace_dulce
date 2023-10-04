@@ -1,3 +1,5 @@
+import { Container } from './Information.styles';
+
 export const Information = () => {
-  return <div>Informatii</div>;
+  return <Container>Informatii</Container>;
 };

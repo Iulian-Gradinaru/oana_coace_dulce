@@ -1,6 +1,8 @@
 import { Typography } from '@mui/material';
 import { Carousel } from '../Carousel';
-import welcomeRight from '../../assets/products/poza7.jpg';
+import welcomeRight from '../../assets/products/Tort_RedVelvet_3.jpg';
+import { useEffect } from 'react';
+
 import {
   CustomGrid,
   CustomPaper,
@@ -11,6 +13,13 @@ import {
 } from './About.styles';
 
 export const About = () => {
+  const windowHeight = window.innerHeight;
+  const halfPageY = windowHeight / 2;
+
+  useEffect(() => {
+    window.scrollTo(0, halfPageY);
+  }, []);
+
   return (
     <div>
       <Carousel />

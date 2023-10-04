@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-.main-content {
+/* .main-content {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,7 +10,7 @@
   padding-bottom: 30px;
   position: relative;
   background-image: url('./assets/products/shopping-pattern-background-design_260839-17.jpg');
-}
+} */
 /* 
 @media (max-width: 768px) {
   .main-content {
@@ -32,7 +32,7 @@
   height: auto;
   min-height: 100vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f2f2f7;
+  background-color: #fff;
 }
 
 body {

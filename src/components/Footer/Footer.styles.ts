@@ -80,7 +80,7 @@ export const RowWrapper = styled('div')(({ theme }) => {
     justifyContent: 'center',
     alignItems: 'flex-start',
     padding: 30,
-    backgroundColor: '#e83e8c7a',
+    backgroundColor: '#f396c1',
     color: 'white',
 
     [theme.breakpoints.down('sm')]: {

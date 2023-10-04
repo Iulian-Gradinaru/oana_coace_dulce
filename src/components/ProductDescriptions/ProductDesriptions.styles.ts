@@ -51,12 +51,18 @@ export const CustomImage = styled('img')(({ theme }) => {
 export const Paragraph = styled('p')(({ theme }) => {
   return {
     width: 300,
-    marginRight: -20,
 
+    display: 'flex',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+
+    [theme.breakpoints.down('md')]: {
+      width: 600,
+    },
     [theme.breakpoints.down('sm')]: {
       width: 300,
       display: 'flex',
-      justifyContent: 'center',
+      justifyContent: 'flex-start',
       alignItems: 'center',
       marginLeft: 0,
     },
@@ -73,19 +79,6 @@ export const ProductName = styled('div')(({ theme }) => {
   };
 });
 
-export const Price = styled('p')(({ theme }) => {
-  return {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    fontWeight: 600,
-
-    [theme.breakpoints.down('sm')]: {
-      fontWeight: 600,
-    },
-  };
-});
-
 export const ContainerProduct = styled('div')(({ theme }) => {
   return {
     display: 'flex',
@@ -95,78 +88,18 @@ export const ContainerProduct = styled('div')(({ theme }) => {
     width: '40%',
     marginTop: 20,
 
+    [theme.breakpoints.down('md')]: {
+      marginTop: 0,
+      marginBottom: 30,
+    },
     [theme.breakpoints.down('sm')]: {
       marginTop: 0,
-    },
-  };
-});
-export const ContainerButtons = styled('div')(({ theme }) => {
-  return {
-    display: 'flex',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    gap: 10,
-
-    [theme.breakpoints.down('md')]: {
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      marginTop: 100,
-      gap: 40,
-    },
-    [theme.breakpoints.down('sm')]: {
-      marginTop: 10,
-    },
-  };
-});
-export const CountHandler = styled('div')(({ theme }) => {
-  return {
-    [theme.breakpoints.down('sm')]: {
-      marginTop: 20,
-      marginLeft: 50,
+      // paddingRight: 20,
+      marginBottom: 20,
     },
   };
 });
 
-export const StylesButton = styled(Button)(() => ({
-  backgroundColor: '#7493d0',
-  color: '#fff',
-  borderRadius: '8px',
-  padding: '10px 20px',
-  fontSize: '16px',
-  fontWeight: 'bold',
-  textTransform: 'uppercase',
-  transition: 'background-color 0.3s ease',
-  height: 20,
-
-  '&:hover': {
-    backgroundColor: '#1c2331',
-  },
-}));
-
-export const InputHandler = styled('input')(({ theme }) => {
-  return {
-    width: 60,
-    height: 20,
-    textAlign: 'center',
-    fontWeight: 'bolder',
-    marginLeft: 10,
-    marginRight: 10,
-    borderRadius: 11,
-
-    [theme.breakpoints.down('sm')]: {
-      marginTop: 10,
-    },
-  };
-});
-
-export const StylesParagraph = styled('p')(({ theme }) => {
-  return {
-    fontWeight: 600,
-
-    [theme.breakpoints.down('sm')]: {},
-  };
-});
 export const Title = styled('h2')(({ theme }) => {
   return {
     marginTop: -80,
@@ -177,7 +110,6 @@ export const Title = styled('h2')(({ theme }) => {
     },
     [theme.breakpoints.down('sm')]: {
       marginTop: 30,
-      marginLeft: 33,
     },
   };
 });
@@ -208,9 +140,9 @@ export const CustomButton = styled(Button)(({ theme }) => ({
     backgroundColor: '#1c2331',
   },
   [theme.breakpoints.down('md')]: {
-    marginBottom: 10,
+    marginBottom: 20,
   },
   [theme.breakpoints.down('sm')]: {
-    marginBottom: 10,
+    marginBottom: 20,
   },
 }));

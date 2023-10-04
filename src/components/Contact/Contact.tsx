@@ -18,6 +18,8 @@ import {
   SubmitButton,
   ContactInfo,
   ContactInfoContainer,
+  TextContainer,
+  TextInfo,
 } from './Contact.styles';
 
 /**
@@ -64,12 +66,21 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <PageContainer>
+    <PageContainer className="page-container">
       <Grid container justifyContent="center">
         <Grid item xs={12} sm={6}>
+          <TextContainer className="text-container">
+            <Title className="title">Trimite-ne un mesaj</Title>
+            <TextInfo className="text-info">
+              Daca doresti sa ne trimiti sugestiile tale pentru a ne imbunatati
+              serviciile, sau ai orice fel de nemultumiri, ori pur si simplu
+              doresti sa iei legatura cu noi, te rugam sa completezi formularul
+              de mai jos.
+            </TextInfo>
+          </TextContainer>
           <ContactFormContainer ref={form} onSubmit={sendEmail}>
-            <Title>Contact Me</Title>
-            <InputContainer>
+            {/* <Title>Contact Me</Title> */}
+            <InputContainer className="input-container">
               <Input
                 type="text"
                 placeholder="Full Name"
@@ -84,12 +95,14 @@ export const Contact: React.FC = () => {
               />
             </InputContainer>
             <Textarea placeholder="Your Message" name="message" required />
-            <SubmitButton type="submit">Send Message</SubmitButton>
+            <SubmitButton className="submit-button" type="submit">
+              Send Message
+            </SubmitButton>
           </ContactFormContainer>
-          <ContactInfoContainer>
-            <ContactInfo>
-              <p>Email: bocanel.valerica92@gmail.com</p>
-              <p>Phone: (+40) 741412636</p>
+          <ContactInfoContainer className="contact-info-container">
+            <ContactInfo className="contact-info">
+              <h5>Email: oanacoacedulce@gmail.com</h5>
+              <h5>Phone: (+40) 733983720</h5>
             </ContactInfo>
           </ContactInfoContainer>
         </Grid>
