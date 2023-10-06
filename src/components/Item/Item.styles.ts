@@ -9,14 +9,14 @@ export const Container = styled('div')(({ theme }) => {
 
     height: 500, // Stabilește înălțimea fixă
     overflow: 'hidden', //Ascunde conținutul care depășește înălțimea fixă
-
+    border: '1px solid #ccc',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     boxShadow: '0px 3px 15px rgba(0, 0, 0, 0.2)',
     marginBottom: 50,
-    backgroundColor: 'rgba(193, 201, 233, 0.5)',
+    backgroundColor: '#f0f0f0',
 
     '&:hover': {
       cursor: 'pointer',

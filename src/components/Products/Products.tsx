@@ -1,11 +1,10 @@
-import { Grid, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import { PRODUCTS } from '../../utils/products';
 import { Item } from '../Item';
 import {
   CustomGrid,
   CustomPaper,
   GridContainer,
-  // GridContainerCard,
   GridProduct,
   HeaderTypography,
 } from './Product.styles';
@@ -50,11 +49,8 @@ export const Products = () => {
             </Typography>
           </CustomPaper>
         </CustomGrid>
-        {/* <ImageGrid className="image-grid" item xs={12} md={6}>
-          <Image src={welcomeRight} alt="" />
-        </ImageGrid> */}
+
         <GridProduct container spacing={2} className="grid-product">
-          {' '}
           {productItem}
         </GridProduct>
       </GridContainer>

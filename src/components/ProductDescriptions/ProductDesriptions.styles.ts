@@ -126,7 +126,7 @@ export const ProductDescriptionsTitle = styled('h1')(({ theme }) => {
 });
 
 export const CustomButton = styled(Button)(({ theme }) => ({
-  backgroundColor: '#7493d0',
+  backgroundColor: '#0056b3',
   color: '#fff',
   borderRadius: '8px',
   padding: '10px 20px',
@@ -137,7 +137,7 @@ export const CustomButton = styled(Button)(({ theme }) => ({
   marginRight: 20,
 
   '&:hover': {
-    backgroundColor: '#1c2331',
+    backgroundColor: '#007bff',
   },
   [theme.breakpoints.down('md')]: {
     marginBottom: 20,

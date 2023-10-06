@@ -160,9 +160,11 @@ export const ContactInfo = styled('p')(() => {
 /**
  * Stiled the IconWrapper
  */
-export const IconWrapper = styled('span')(() => {
+export const IconWrapper = styled('a')(() => {
   return {
     marginLeft: 5,
+    textDecoration: 'none',
+    color: '#fff',
     '&:hover': {
       cursor: 'pointer',
       color: '#7493d0',

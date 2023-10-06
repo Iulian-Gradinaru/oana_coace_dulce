@@ -33,7 +33,7 @@ export const TextContainer = styled('div')(({ theme }) => ({
 }));
 
 /**
- * Styles the Text
+ * Styles the TextInfo
  */
 export const TextInfo = styled('h5')(({ theme }) => ({
   display: 'flex',
@@ -43,6 +43,7 @@ export const TextInfo = styled('h5')(({ theme }) => ({
 
   [theme.breakpoints.down('md')]: {
     width: '100%',
+    fontSize: 20,
   },
   [theme.breakpoints.down('sm')]: {
     width: '100%',
@@ -158,15 +159,15 @@ export const Textarea = styled('textarea')(({ theme }) => ({
  */
 export const SubmitButton = styled('button')(({ theme }) => ({
   padding: '10px 20px',
-  backgroundColor: '#4F709C',
+  backgroundColor: '#0056b3',
   color: 'azure',
   border: 'none',
-  borderRadius: '4px',
+  borderRadius: '10px',
   fontSize: '16px',
   cursor: 'pointer',
   marginTop: 10,
   '&:hover': {
-    backgroundColor: '#213555',
+    backgroundColor: '#007bff',
     color: '#FFFFFF',
   },
   [theme.breakpoints.down('md')]: {
@@ -188,6 +189,7 @@ export const ContactInfoContainer = styled('div')(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
     // marginLeft: 20,
     marginBottom: 15,
+    marginTop: 10,
   },
   [theme.breakpoints.down('sm')]: {
     // marginBottom: 35,

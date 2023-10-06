@@ -30,7 +30,7 @@ export const ProductDescriptions: React.FC = () => {
       <Description className="description">
         <CustomImage src={product.productImage} />
 
-        <ContainerProduct className="containerProduct">
+        <ContainerProduct className="container-product">
           <ProductName className="product-name">
             <Title>{product.productName}</Title>
           </ProductName>

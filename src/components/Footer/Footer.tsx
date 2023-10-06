@@ -20,8 +20,6 @@ import {
   faPhone,
 } from '@fortawesome/free-solid-svg-icons';
 
-import { Link } from 'react-router-dom';
-
 /**
  * Import styled
  */
@@ -34,16 +32,17 @@ import {
   ColumnWrapper,
   ColumnHeading,
   RightsWrapper,
-  // Link,
   ContactInfo,
   IconWrapper,
   Underline,
   ContainerParagraph,
-  Paragraph,
   StylesLink,
   CustomLink,
   CustomLogo,
 } from './Footer.styles';
+
+const urlChurch =
+  'https://www.google.com/maps/place/Bucure%C5%9Fti+Sectorul+4,+Bucure%C8%99ti/@44.3819636,26.0427442,12z/data=!3m1!4b1!4m6!3m5!1s0x40b1fe0d5b715d0b:0xfa8fc62cda461d44!8m2!3d44.3939483!4d26.1203408!16zL20vMGN3MzJi?entry=ttu';
 
 /**
  * Display the component
@@ -51,30 +50,12 @@ import {
 export const Footer: React.FC = () => {
   return (
     <FooterContainer className="footer-container">
-      {/* <SocialWrapper className="social-wrapper">
-        <ContainerParagraph className="container-paragraph">
-          <CustomLogo className="logo" src={logo} alt="" />
-
-          <SocialParagraph>
-            Fiecare zi are nevoie de o clipa dulce, iar cofetarie Egreta le
-            ofera acest lucru clientilor nostri.
-          </SocialParagraph>
-        </ContainerParagraph>
-        <div className="container-icon">
-          <IconLink
-            href="https://www.facebook.com/search/top?q=oana%20coace%20dulce"
-            target="_blank"
-          >
-            <FontAwesomeIcon icon={faFacebook} />
-          </IconLink>
-        </div>
-      </SocialWrapper> */}
       <RowWrapper className="row-wrapper">
         <CustomLogo className="logo" src={logo} alt="" />
         <SocialWrapper className="social-wrapper">
           <ContainerParagraph className="container-paragraph">
             <SocialParagraph className="social-paragraph">
-              Fiecare zi are nevoie de o clipa dulce, iar cofetarie Egreta le
+              Fiecare zi are nevoie de o clipa dulce, iar noi incercam sa le
               ofera acest lucru clientilor nostri.
             </SocialParagraph>
           </ContainerParagraph>
@@ -92,7 +73,7 @@ export const Footer: React.FC = () => {
             Link-uri utile
             <Underline />
           </ColumnHeading>
-          <div className="iulian">
+          <div>
             <CustomLink to="/">Acasa</CustomLink>
             <CustomLink to="/about">Despre noi</CustomLink>
             <CustomLink to="/blog">Blog</CustomLink>
@@ -107,21 +88,27 @@ export const Footer: React.FC = () => {
           </ColumnHeading>
           <ContactInfo>
             <FontAwesomeIcon icon={faHouse} />
-            <IconWrapper>Bucharest, RO</IconWrapper>
+            <IconWrapper
+              href={urlChurch}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Bucharest, RO
+            </IconWrapper>
           </ContactInfo>
           <ContactInfo>
             <FontAwesomeIcon icon={faEnvelope} />
             <StylesLink href="mailto:info@example.com">
-              iulian_gradinaru@yahoo.com
+              oanacoacedulce@gmail.com
             </StylesLink>
           </ContactInfo>
           <p>
             <FontAwesomeIcon icon={faPhone} />{' '}
-            <StylesLink href="tel:0123456788">+40 722 358 516</StylesLink>
+            <StylesLink href="tel:0123456788">(+40) 733983720</StylesLink>
           </p>
           <p>
             <FontAwesomeIcon icon={faFax} />{' '}
-            <StylesLink href="fax:0123456789">+40 722 358 516</StylesLink>
+            <StylesLink href="fax:0123456789">(+40) 733983720</StylesLink>
           </p>
         </ColumnWrapper>
       </RowWrapper>

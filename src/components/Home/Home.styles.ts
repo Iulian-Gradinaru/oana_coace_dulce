@@ -3,15 +3,13 @@
  */
 import { Grid, Paper, Typography } from '@mui/material';
 import { styled } from '@mui/system';
-import img1 from '../../assets/products/var1.jpeg';
+
 /**
  * Stiled the FooterContainer
  */
 export const GridContainer = styled(Grid)(({ theme }) => {
   return {
     padding: 91,
-    // backgroundImage: `url(${img1})`,
-    // backgroundSize: 'unset',
     backgroundColor: '#fff',
     marginTop: '-40px',
     width: '100%',
@@ -72,6 +70,7 @@ export const Image = styled('img')(({ theme }) => {
     },
   };
 });
+
 export const ImageGrid = styled(Grid)(({ theme }) => {
   return {
     marginTop: 10,

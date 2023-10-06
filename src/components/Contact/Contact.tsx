@@ -83,7 +83,7 @@ export const Contact: React.FC = () => {
             <InputContainer className="input-container">
               <Input
                 type="text"
-                placeholder="Full Name"
+                placeholder="Nume Prenume"
                 name="user_name"
                 required
               />
@@ -94,15 +94,15 @@ export const Contact: React.FC = () => {
                 required
               />
             </InputContainer>
-            <Textarea placeholder="Your Message" name="message" required />
+            <Textarea placeholder="Mesajul tau" name="message" required />
             <SubmitButton className="submit-button" type="submit">
-              Send Message
+              Trimite mesaj
             </SubmitButton>
           </ContactFormContainer>
           <ContactInfoContainer className="contact-info-container">
             <ContactInfo className="contact-info">
               <h5>Email: oanacoacedulce@gmail.com</h5>
-              <h5>Phone: (+40) 733983720</h5>
+              <h5>Telefon: (+40) 733983720</h5>
             </ContactInfo>
           </ContactInfoContainer>
         </Grid>

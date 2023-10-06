@@ -15,10 +15,15 @@ export const ContainerPost = styled('div')(({ theme }) => {
 
 export const Image = styled('img')(({ theme }) => {
   return {
-    width: '60%',
+    maxWidth: '60%',
+    borderRadius: 20,
 
-    [theme.breakpoints.down('md')]: {},
-    [theme.breakpoints.down('sm')]: {},
+    [theme.breakpoints.down('md')]: {
+      maxWidth: '80%',
+    },
+    [theme.breakpoints.down('sm')]: {
+      maxWidth: '80%',
+    },
   };
 });
 
@@ -32,19 +37,19 @@ export const Paragraph = styled('p')(({ theme }) => {
 });
 
 export const CustomButton = styled(Button)(({ theme }) => ({
-  backgroundColor: '#7493d0',
+  backgroundColor: '#0056b3',
   color: '#fff',
   borderRadius: '8px',
   padding: '10px 20px',
   fontSize: '16px',
   fontWeight: 'bold',
-  textTransform: 'uppercase',
+  textTransform: 'initial',
   transition: 'background-color 0.3s ease',
   marginRight: 20,
   marginBottom: 10,
 
   '&:hover': {
-    backgroundColor: '#1c2331',
+    backgroundColor: '#007bff',
   },
   [theme.breakpoints.down('md')]: {
     marginBottom: 20,
